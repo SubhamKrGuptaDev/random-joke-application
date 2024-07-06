@@ -1,0 +1,4 @@
+
+# Maven Application Run Command
+./mvnw -Pnative native:compile -DskipTests=true
+
