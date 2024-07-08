@@ -3,6 +3,7 @@ package com.random.joke.commands;
 
 import com.random.joke.service.RandomJokeService;
 import org.jline.terminal.Terminal;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
 
@@ -10,11 +11,10 @@ import org.springframework.shell.standard.ShellMethod;
 public class RandomJokeCommand {
 
     private final RandomJokeService randomJokeService;
-    private final Terminal terminal;
 
-    public RandomJokeCommand(RandomJokeService randomJokeService, Terminal terminal) {
+    @Autowired
+    public RandomJokeCommand(RandomJokeService randomJokeService) {
         this.randomJokeService = randomJokeService;
-        this.terminal = terminal;
     }
 
     @ShellMethod(key = "random-joke", value = "Get random joke")
